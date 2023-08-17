@@ -1,0 +1,48 @@
+.main-header{
+    text-align: center;
+    color:darkgray;
+}
+
+.link-wrapper{
+    padding-top: 10%;
+    text-decoration: underline;
+    text-align: center;
+    color:darkgray;
+}
+
+.link-input{
+    width: 35%;
+    border: 5px;
+    border-color: cyan;
+    background-color: whitesmoke;
+    margin-top: 1%;
+}
+
+.background{
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,9,79,1) 55%, rgba(0,212,255,1) 100%);
+}
+
+.convert-btn{
+    margin-top: 1%;
+    text-align: center;
+    width: 10%;
+    height: 50px;
+    border-radius: 3px;
+}
+
+.conv-next-btn{
+    border-radius: 5px;
+    background-color: whitesmoke;
+    margin-top: 1%;
+    margin-left: 1%;
+    width: 8%;
+}
+
+.download-div{
+    margin-top: 1%;
+    font-size: 30px;
+}
+
+.info{
+    font-size: 15px;
+}

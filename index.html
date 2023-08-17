@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--Start Bootstrap-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+        <!--End Bootstrap-->
+
+        <!--Start CSS-->
+        <link rel="stylesheet" href="style.css">
+        <!--End CSS-->
+    </head>
+    <body class="background">
+        <div class="main-header">
+            <h1>Lil' YouTube To MP3 Downloader</h1>
+        </div>
+
+        <div class="link-wrapper">
+            <h4>Paste your YouTube link below</h4>
+            <input id="yt-link" class="link-input" type="url" placeholder="ex. https://www.youtube.com/watch?v=uOwDVFXKLOY">
+            <button id="convert-next-btn" class="conv-next-btn" hidden="true">Convert Next</button>
+            <div></div>
+            <button id="dl-btn" class="convert-btn">Convert</button>
+            <div></div>
+            <div class="download-div" id="download-div">
+                <a target="_blank" id="dl-link" href="" rel="noopener" download=""></a>
+                <p id="info" class="info" hidden="true">(Takes you to a page with the download button)</p>
+            </div>
+        </div>
+
+
+
+        <script src="fetch.js"></script>
+    </body>
+</html>
