@@ -55,8 +55,6 @@ function DownloadFile(url, title, size) {
 
 	info.innerHTML = title + " " + "(" + size + ")";
 	
-
-	document.getElementById('dl-btn').disabled = false;
 }
 
 
