@@ -14,31 +14,33 @@ convertBtn.addEventListener('click', async () => {
 		return;
 	}
 
-	
-	const url = 'https://youtube-mp3-download1.p.rapidapi.com/dl?id=' + videoID;
+	const url = 'https://youtube-mp3-download-highest-quality1.p.rapidapi.com/ytmp3/ytmp3/custom/?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D' + videoID + '&quality=320';
 	const options = {
 		method: 'GET',
 		headers: {
 			'X-RapidAPI-Key': 'c3108d3d0fmsh7f954523d3df551p12af35jsnd2c68e78b823',
-			'X-RapidAPI-Host': 'youtube-mp3-download1.p.rapidapi.com'
+			'X-RapidAPI-Host': 'youtube-mp3-download-highest-quality1.p.rapidapi.com'
 		}
 	};
 
 
 	try {
+		document.getElementById('info').innerText = "Processing...";
+		document.getElementById('dl-btn').disabled = true;
 		const response = await fetch(url, options);
 		const result = await response.text();
+		console.log(result);
 		const resultObj = JSON.parse(result);
-		DownloadFile(resultObj["link"], resultObj["title"]);
 		console.log(resultObj);
-
+		DownloadFile(resultObj["link"], resultObj["title"], resultObj["size"]);
 	} catch (error) {
+		alert("An error occurred and the file cannot be downloaded!");
 		console.error(error);
 	}
 });
 
 
-function DownloadFile(url, title) {
+function DownloadFile(url, title, size) {
 	const dlLink = document.getElementById('dl-link');
 	const info = document.getElementById('info');
 	const convertNextBtn = document.getElementById('convert-next-btn');
@@ -49,10 +51,12 @@ function DownloadFile(url, title) {
 	});
 
 	dlLink.href = url;
-	dlLink.download = title + '.mp3';
 	dlLink.innerHTML = 'Download MP3';
 
-	info.hidden = false;
+	info.innerHTML = title + " " + "(" + size + ")";
+	
+
+	document.getElementById('dl-btn').disabled = false;
 }
 
 
